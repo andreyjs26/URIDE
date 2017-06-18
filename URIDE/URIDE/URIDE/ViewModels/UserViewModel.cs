@@ -5,16 +5,18 @@ using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace URIDE.ViewModels
-{
-    public class CapacidadViewModel : BaseViewModel
+{   
+
+    public class UserViewModel : BaseViewModel
     {
-        public CapacidadViewModel()
+        public UserViewModel()
         {
-            Title = "Capacidad del Vehiculo";
+            Title = "Usuario";
 
             OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://xamarin.com/platform")));
         }
 
         public ICommand OpenWebCommand { get; }
+
     }
 }

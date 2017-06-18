@@ -5,13 +5,12 @@ using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace URIDE.ViewModels
-{   
-
-    public class UsuarioViewModel : BaseViewModel
+{
+    public class DriverViewModel : BaseViewModel
     {
-        public UsuarioViewModel()
+        public DriverViewModel()
         {
-            Title = "Usuario";
+            Title = "Conductor";
 
             OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://xamarin.com/platform")));
         }
