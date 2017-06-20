@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="URIDE.Views.UserPage">
     <ContentPage.Content>
-        <StackLayout>
+        <ScrollView>
             <Entry Placeholder="Digita tu nombre"></Entry>
             <Entry Placeholder="Digita tu apellido"></Entry>
             <Entry Placeholder="Digita tu correo"></Entry>
@@ -12,9 +12,10 @@
             <Entry Placeholder="Digita tu destino"></Entry>
             <Entry Placeholder="Digita tu hora de entrada"></Entry>
             <Entry Placeholder="Digita tu hora de salida"></Entry>           
-            <Label Text="Tienes alguna discapacidad?" />
-            <Switch x:Name="swhDiscapacity" Toggled="swhDiscapacity_Toggled"  />
-            <Button Text="Guardar" x:Name="btnSave" Clicked="btnSave_Clicked"></Button>
-        </StackLayout>
+            <Label Text="Tienes alguna discapacidad?" />           
+                <Switch x:Name="swhDiscapacity" Toggled="swhDiscapacity_Toggled"   />
+                <Button Text="Guardar" x:Name="btnSave" Clicked="btnSave_Clicked"></Button>
+                     
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

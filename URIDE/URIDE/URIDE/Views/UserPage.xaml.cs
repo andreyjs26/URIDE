@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Android.Graphics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +7,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Android.Graphics.Drawables;
+using URIDE.Droid;
 
 namespace URIDE.Views
 {
@@ -15,7 +18,8 @@ namespace URIDE.Views
 		public UserPage()
 		{
 			InitializeComponent ();
-		}
+           
+        }
 
         private void btnSave_Clicked(object sender, EventArgs e)
         {
@@ -24,17 +28,7 @@ namespace URIDE.Views
 
         private void swhDiscapacity_Toggled(object sender, ToggledEventArgs e)
         {
-            /*if (this.Control != null)
-            {
-                if (this.Control.Checked)
-                {
-                    this.Control.ThumbDrawable.SetColorFilter(greenColor, PorterDuff.Mode.SrcAtop);
-                }
-                else
-                {
-                    this.Control.ThumbDrawable.SetColorFilter(greyColor, PorterDuff.Mode.SrcAtop);
-                }
-            }*/
+          
         }
     }
 }
