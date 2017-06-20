@@ -4,18 +4,21 @@
              x:Class="URIDE.Views.UserPage">
     <ContentPage.Content>
         <ScrollView>
-            <Entry Placeholder="Digita tu nombre"></Entry>
-            <Entry Placeholder="Digita tu apellido"></Entry>
-            <Entry Placeholder="Digita tu correo"></Entry>
-            <Entry Placeholder="Digita tu contraseña" IsPassword="True"></Entry>
-            <Entry Placeholder="Digita tu residencia"></Entry>
-            <Entry Placeholder="Digita tu destino"></Entry>
-            <Entry Placeholder="Digita tu hora de entrada"></Entry>
-            <Entry Placeholder="Digita tu hora de salida"></Entry>           
-            <Label Text="Tienes alguna discapacidad?" />           
-                <Switch x:Name="swhDiscapacity" Toggled="swhDiscapacity_Toggled"   />
-                <Button Text="Guardar" x:Name="btnSave" Clicked="btnSave_Clicked"></Button>
-                     
+            <StackLayout>
+                <Entry Placeholder="Digita tu nombre"></Entry>
+                <Entry Placeholder="Digita tu apellido"></Entry>
+                <Entry Placeholder="Digita tu correo"></Entry>
+                <Entry Placeholder="Digita tu contraseña" IsPassword="True"></Entry>
+                <Entry Placeholder="Digita tu residencia"></Entry>
+                <Entry Placeholder="Digita tu destino"></Entry>
+                <Entry Placeholder="Digita tu hora de entrada"></Entry>
+                <Entry Placeholder="Digita tu hora de salida"></Entry>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Tienes alguna discapacidad?" FontSize="Medium" HorizontalOptions="Start"></Label>
+                    <Switch x:Name="swhDiscapacity" Toggled="swhDiscapacity_Toggled"  HorizontalOptions="Center" />
+                </StackLayout>               
+                <Button Text="Guardar" x:Name="btnSave" Clicked="btnSave_Clicked" BackgroundColor="#43A047" TextColor="White" BorderColor="#43A047"></Button>
+            </StackLayout>      
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
