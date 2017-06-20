@@ -21,7 +21,7 @@ namespace URIDE
             {
                 Children =
                 {
-                    new NavigationPage(new ItemsPage())
+                    /*new NavigationPage(new ItemsPage())
                     {
                         Title = "Browse",
                         Icon = Device.OnPlatform<string>("tab_feed.png",null,null)
@@ -30,7 +30,18 @@ namespace URIDE
                     {
                         Title = "About",
                         Icon = Device.OnPlatform<string>("tab_about.png",null,null)
+                    },*/
+                    new NavigationPage(new UserPage())
+                    {
+                        Title = "Usuario",
+                        Icon = Device.OnPlatform<string>("tab about.png",null,null)
                     },
+                    new NavigationPage(new DriverPage())
+                    {
+                        Title = "Conductor",
+                        Icon = Device.OnPlatform<string>("tab about.png",null,null)
+                    },   
+
                 }
             };
         }
