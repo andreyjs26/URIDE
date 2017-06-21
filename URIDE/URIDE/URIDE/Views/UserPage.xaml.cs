@@ -30,5 +30,15 @@ namespace URIDE.Views
         {
           
         }
+
+        private void entrancePicker_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+
+        }
+
+        private void exitPicker_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+
+        }
     }
 }
