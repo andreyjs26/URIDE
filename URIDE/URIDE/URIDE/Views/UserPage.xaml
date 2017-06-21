@@ -1,18 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:URIDE.ViewModels"
              x:Class="URIDE.Views.UserPage">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
                 <Entry Placeholder="Digita tu nombre"></Entry>
                 <Entry Placeholder="Digita tu apellido"></Entry>
-                <Entry Placeholder="Digita tu correo"></Entry>
+                <Entry Placeholder="Digita tu correo">
+                    <Entry.Behaviors>
+                        <local:CustomValidatorBehavior />
+                    </Entry.Behaviors>
+                </Entry>
                 <Entry Placeholder="Digita tu contraseña" IsPassword="True"></Entry>
                 <Entry Placeholder="Digita tu residencia"></Entry>
                 <Entry Placeholder="Digita tu destino"></Entry>
-                <Entry Placeholder="Digita tu hora de entrada"></Entry>
-                <Entry Placeholder="Digita tu hora de salida"></Entry>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Selecciona tu hora de entrada" FontSize="Medium" HorizontalOptions="Start"></Label>
+                    <TimePicker x:Name="entrancePicker" PropertyChanged="entrancePicker_PropertyChanged" HorizontalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Selecciona tu hora de salida" FontSize="Medium" HorizontalOptions="Start"></Label>
+                    <TimePicker x:Name="exitPicker" PropertyChanged="exitPicker_PropertyChanged" HorizontalOptions="Center" />
+                </StackLayout>               
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Tienes alguna discapacidad?" FontSize="Medium" HorizontalOptions="Start"></Label>
                     <Switch x:Name="swhDiscapacity" Toggled="swhDiscapacity_Toggled"  HorizontalOptions="Center" />
