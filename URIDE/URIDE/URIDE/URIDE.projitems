@@ -29,6 +29,7 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\BaseDataObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CapacityViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CustomValidatorBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DriverViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MatchViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\UserViewModel.cs" />
