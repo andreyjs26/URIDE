@@ -13,22 +13,23 @@ namespace URIDE.ViewModels
 
         protected override void OnAttachedTo(Entry entry)
         {
-            entry.TextChanged += OnEntryTextChanged;
+            entry.TextChanged += OnEntryEmailTextChanged;
             base.OnAttachedTo(entry);
         }
 
         protected override void OnDetachingFrom(Entry entry)
         {
-            entry.TextChanged -= OnEntryTextChanged;
+            entry.TextChanged -= OnEntryEmailTextChanged;
             base.OnDetachingFrom(entry);
         }
 
-        void OnEntryTextChanged(object sender, TextChangedEventArgs args)
+        void OnEntryEmailTextChanged(object sender, TextChangedEventArgs args)
         {
-            bool IsValid;          
+            bool IsValid;
             IsValid = (Regex.IsMatch(args.NewTextValue, emailRegex, RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250)));
-            ((Entry)sender).TextColor = IsValid ? Color.Default : Color.Red;            
+            ((Entry)sender).TextColor = IsValid ? Color.Default : Color.Red;
 
         }
-    }
+
+    }    
 }

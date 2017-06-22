@@ -6,27 +6,45 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Entry Placeholder="Digita tu nombre"></Entry>
-                <Entry Placeholder="Digita tu apellido"></Entry>
-                <Entry Placeholder="Digita tu correo">
-                    <Entry.Behaviors>
-                        <local:CustomValidatorBehavior />
-                    </Entry.Behaviors>
-                </Entry>
-                <Entry Placeholder="Digita tu contraseña" IsPassword="True"></Entry>
-                <Entry Placeholder="Digita tu residencia"></Entry>
-                <Entry Placeholder="Digita tu destino"></Entry>
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Selecciona tu hora de entrada" FontSize="Medium" HorizontalOptions="Start"></Label>
-                    <TimePicker x:Name="entrancePicker" PropertyChanged="entrancePicker_PropertyChanged" HorizontalOptions="Center"/>
+                    <Entry Placeholder="Digita tu nombre" x:Name="txtName" HorizontalOptions="FillAndExpand"></Entry>
+                    <Label FontSize="Medium" IsVisible="False" x:Name="lblName" TextColor="Red" HorizontalOptions="End">* Campo Requerido</Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Entry Placeholder="Digita tu apellido" x:Name="txtLastName" HorizontalOptions="FillAndExpand"></Entry>
+                    <Label FontSize="Medium" IsVisible="False" x:Name="lblLastName" TextColor="Red" HorizontalOptions="End">* Campo Requerido</Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Entry Placeholder="Digita tu correo" x:Name="txtEmail" HorizontalOptions="FillAndExpand">
+                        <Entry.Behaviors>
+                            <local:CustomValidatorBehavior />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Label  FontSize="Medium" IsVisible="False" x:Name="lblEmail" TextColor="Red" HorizontalOptions="End">* Campo Requerido</Label>
+                </StackLayout>                 
+                <StackLayout Orientation="Horizontal" >
+                    <Entry Placeholder="Digita tu contraseña" IsPassword="True" x:Name="txtPass" HorizontalOptions="FillAndExpand"></Entry>
+                    <Label  FontSize="Medium" IsVisible="False" x:Name="lblPass" TextColor="Red" HorizontalOptions="End">* Campo Requerido</Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Entry Placeholder="Digita tu residencia" x:Name="txtResidence" HorizontalOptions="FillAndExpand"></Entry>
+                    <Label  FontSize="Medium" IsVisible="False" x:Name="lblResidence" TextColor="Red" HorizontalOptions="End">* Campo Requerido</Label>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Selecciona tu hora de salida" FontSize="Medium" HorizontalOptions="Start"></Label>
-                    <TimePicker x:Name="exitPicker" PropertyChanged="exitPicker_PropertyChanged" HorizontalOptions="Center" />
+                    <Entry Placeholder="Digita tu destino" x:Name="txtDestination"  HorizontalOptions="FillAndExpand"></Entry>
+                    <Label  FontSize="Medium" IsVisible="False" x:Name="lblDestination" TextColor="Red" HorizontalOptions="End">* Campo Requerido</Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Selecciona tu hora de entrada" FontSize="Medium" HorizontalOptions="StartAndExpand"></Label>
+                    <TimePicker x:Name="entrancePicker" PropertyChanged="entrancePicker_PropertyChanged" HorizontalOptions="End"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Selecciona tu hora de salida" FontSize="Medium" HorizontalOptions="StartAndExpand"></Label>
+                    <TimePicker x:Name="exitPicker" PropertyChanged="exitPicker_PropertyChanged" HorizontalOptions="End" />
                 </StackLayout>               
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Tienes alguna discapacidad?" FontSize="Medium" HorizontalOptions="Start"></Label>
-                    <Switch x:Name="swhDiscapacity" Toggled="swhDiscapacity_Toggled"  HorizontalOptions="Center" />
+                    <Label Text="Tienes alguna discapacidad?" FontSize="Medium" HorizontalOptions="StartAndExpand"></Label>
+                    <Switch x:Name="swhDiscapacity" Toggled="swhDiscapacity_Toggled" HorizontalOptions="End" />
                 </StackLayout>               
                 <Button Text="Guardar" x:Name="btnSave" Clicked="btnSave_Clicked" BackgroundColor="#43A047" TextColor="White" BorderColor="#43A047"></Button>
             </StackLayout>      
