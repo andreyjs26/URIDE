@@ -24,7 +24,24 @@ namespace URIDE.Views
 
         private void btnSave_Clicked(object sender, EventArgs e)
         {
+            //Validations
+            bool IsValid = true;
+
+            lblName.IsVisible = txtName.Text != null  ? false :true;
+            lblLastName.IsVisible = txtLastName.Text  != null ? false : true;
+            lblEmail.IsVisible = txtEmail.Text != null ? false : true;
+            lblPass.IsVisible = txtPass.Text != null ? false : true;
+            lblResidence.IsVisible = txtResidence.Text != null ? false : true;
+            lblDestination.IsVisible = txtDestination.Text != null ? false : true;
+
+            IsValid = txtName.Text != null || txtLastName.Text != null || txtEmail.Text != null || txtPass.Text != null || txtResidence.Text != null || txtDestination.Text != null ? true : false;
+            if (!IsValid) {
+                return;
+            }
             
+            //Call the DB
+                
+
         }
 
         private void swhDiscapacity_Toggled(object sender, ToggledEventArgs e)
