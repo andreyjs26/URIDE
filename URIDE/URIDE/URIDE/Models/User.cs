@@ -26,8 +26,8 @@ namespace URIDE.Models
         [NotNull]
         public string lastName
         {
-            get { return _name; }
-            set { this._name = value; OnPropertyChanged(nameof(lastName)); }
+            get { return _lastName; }
+            set { this._lastName = value; OnPropertyChanged(nameof(lastName)); }
         }
         private string _email;
         [NotNull]
@@ -71,9 +71,9 @@ namespace URIDE.Models
             get { return _exit; }
             set { this._exit = value; OnPropertyChanged(nameof(exit)); }
         }
-        private string _discapacity;
+        private bool _discapacity;
         [NotNull]
-        public string discapacity
+        public bool discapacity
         {
             get { return _discapacity; }
             set { this._discapacity = value; OnPropertyChanged(nameof(discapacity)); }

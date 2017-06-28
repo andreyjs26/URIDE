@@ -10,16 +10,33 @@ using Xamarin.Forms.Xaml;
 using Android.Graphics.Drawables;
 using URIDE.Droid;
 using URIDE.ViewModels;
+using URIDE.Services;
+using URIDE.Models;
 
 namespace URIDE.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class UserPage : ContentPage
 	{
-		public UserPage()
+        private UserDataAccess dataAccess;
+        public UserPage()
 		{
 			InitializeComponent ();
-           
+            // An instance of the UserDataAccess
+            // that is used for data-binding and data access
+            this.dataAccess = new UserDataAccess();
+
+        }
+
+        // An event that is raised when the page is shown
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            // The instance of CustomersDataAccess
+            // is the data binding source
+            this.BindingContext = this.dataAccess;
+
+            IEnumerable<User> all = dataAccess.GetUsers();
         }
 
         private void btnSave_Clicked(object sender, EventArgs e)
@@ -27,8 +44,8 @@ namespace URIDE.Views
             //Validations
             bool IsValid = true;
 
-            lblName.IsVisible = txtName.Text != null  ? false :true;
-            lblLastName.IsVisible = txtLastName.Text  != null ? false : true;
+            lblName.IsVisible = txtName.Text != null ? false : true;
+            lblLastName.IsVisible = txtLastName.Text != null ? false : true;
             lblEmail.IsVisible = txtEmail.Text != null ? false : true;
             lblPass.IsVisible = txtPass.Text != null ? false : true;
             lblResidence.IsVisible = txtResidence.Text != null ? false : true;
@@ -38,9 +55,20 @@ namespace URIDE.Views
             if (!IsValid) {
                 return;
             }
-            
+
             //Call the DB
-                
+            User newUser = new User();
+            newUser.name = txtName.Text;
+            newUser.lastName = txtLastName.Text;
+            newUser.email = txtEmail.Text;
+            newUser.password = txtPass.Text;
+            newUser.residence = txtResidence.Text;
+            newUser.destination = txtDestination.Text;
+            newUser.entrance = entrancePicker.Time;
+            newUser.exit = exitPicker.Time;
+            newUser.discapacity = swhDiscapacity.IsToggled;
+
+            this.dataAccess.SaveUser(newUser);
 
         }
 
