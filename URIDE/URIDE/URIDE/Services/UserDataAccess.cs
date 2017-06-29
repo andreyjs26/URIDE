@@ -70,6 +70,17 @@ namespace URIDE.Services
             }
         }
 
+        public User GetUserLogin(string email, string pass)
+        {
+            lock (collisionLock)
+            {
+                var query = from user in database.Table<User>()
+                            where user.email == email && user.password == pass
+                            select user;
+                return query.FirstOrDefault();
+            }
+        }
+
         public int SaveUser(User user)
         {
             lock (collisionLock)

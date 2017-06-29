@@ -69,6 +69,7 @@ namespace URIDE.Views
             newUser.discapacity = swhDiscapacity.IsToggled;
 
             this.dataAccess.SaveUser(newUser);
+            DisplayAlert("Validacion","Usuario guardado satisfactoriamente","Aceptar");
 
         }
 
