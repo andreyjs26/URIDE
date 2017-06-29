@@ -12,7 +12,9 @@ namespace URIDE
 		{
 			InitializeComponent();
 
-			SetMainPage();
+            Current.MainPage = new NavigationPage(new Login());
+
+           // SetMainPage();
 		}
 
 		public static void SetMainPage()
