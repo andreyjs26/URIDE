@@ -28,7 +28,7 @@ namespace URIDE.Views
                User user=  this.dataAccess.GetUserLogin(emailEntry.Text, passwordEntry.Text);
                 if (user != null)
                 {
-                    App.SetMainPage();
+                    App.SetMainPage(user);
                 }
                 else
                 {
@@ -45,8 +45,10 @@ namespace URIDE.Views
             }
         }
 
-       
-
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            App.SetMainPage(null);
+        }
     }
   
 

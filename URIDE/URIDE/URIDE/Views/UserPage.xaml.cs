@@ -19,12 +19,26 @@ namespace URIDE.Views
 	public partial class UserPage : ContentPage
 	{
         private UserDataAccess dataAccess;
-        public UserPage()
+        public UserPage(User user)
 		{
 			InitializeComponent ();
             // An instance of the UserDataAccess
             // that is used for data-binding and data access
             this.dataAccess = new UserDataAccess();
+            if(user != null)
+            {
+                txtName.Text = user.name;
+                txtLastName.Text = user.lastName;
+                txtEmail.Text = user.email;
+                txtPass.Text = user.password;
+                txtDestination.Text = user.destination;
+                txtResidence.Text = user.residence;
+                entrancePicker.Time = user.entrance;
+                exitPicker.Time = user.exit;
+                swhDiscapacity.IsToggled = user.discapacity;
+                
+            }
+            
 
         }
 

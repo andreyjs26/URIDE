@@ -12,6 +12,11 @@
             <Label Text="Contraseña" />
             <Entry x:Name="passwordEntry" IsPassword="true" />
             <Button Text="Acceder" Clicked="Button_Clicked" />
+            <Label FontSize="Medium" Text="Registrarse">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                </Label.GestureRecognizers>
+            </Label>
             <Label x:Name="messageLabel" />
         </StackLayout>
     </ContentPage.Content>

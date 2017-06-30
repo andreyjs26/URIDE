@@ -1,4 +1,5 @@
-﻿using URIDE.Views;
+﻿using URIDE.Models;
+using URIDE.Views;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -17,8 +18,9 @@ namespace URIDE
            // SetMainPage();
 		}
 
-		public static void SetMainPage()
+		public static void SetMainPage(User user)
 		{
+           
             Current.MainPage = new TabbedPage
             {
                 Children =
@@ -33,10 +35,11 @@ namespace URIDE
                         Title = "About",
                         Icon = Device.OnPlatform<string>("tab_about.png",null,null)
                     },*/
-                    new NavigationPage(new UserPage())
+                    new NavigationPage(new UserPage(user))
                     {
                         Title = "Usuario",
                         Icon = Device.OnPlatform<string>("tab about.png",null,null)
+                        
                     },
                     new NavigationPage(new DriverPage())
                     {

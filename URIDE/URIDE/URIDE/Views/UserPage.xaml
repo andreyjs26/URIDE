@@ -2,12 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:URIDE.ViewModels"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              x:Class="URIDE.Views.UserPage">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <Entry Placeholder="Digita tu nombre" x:Name="txtName" HorizontalOptions="FillAndExpand"></Entry>
+                    <Label Text="{Binding name}"></Label>
+                    <Entry Placeholder="Digita tu nombre" x:Name="txtName" HorizontalOptions="FillAndExpand" ></Entry>
                     <Label FontSize="Medium" IsVisible="False" x:Name="lblName" TextColor="Red" HorizontalOptions="End">* Campo Requerido</Label>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" >
