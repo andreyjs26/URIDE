@@ -1,23 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="URIDE.Views.Login">
+             x:Class="URIDE.Views.Login"  
+             BackgroundColor="Black"
+            >
     <!--<ContentPage.ToolbarItems>
         <ToolbarItem Text="Acceder" Clicked="OnSignUpButtonClicked" />
     </ContentPage.ToolbarItems>-->
     <ContentPage.Content>
-        <StackLayout VerticalOptions="StartAndExpand">
-            <Label Text="Email" />
-            <Entry x:Name="emailEntry" />
-            <Label Text="Contraseña" />
-            <Entry x:Name="passwordEntry" IsPassword="true" />
+         <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="Center">
+            <Image Source="logo.jpg" WidthRequest="250" HeightRequest="120"/>
+            <Entry x:Name="emailEntry" Placeholder="Email" BackgroundColor="White" />
+            <Entry x:Name="passwordEntry" IsPassword="true" Placeholder="Contraseña" BackgroundColor="White"/>
             <Button Text="Acceder" Clicked="Button_Clicked" />
-            <Label FontSize="Medium" Text="Registrarse">
+            <Label FontSize="Medium" Text="Registrate ahora" TextColor="#FFEE58" HorizontalOptions="Center">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
                 </Label.GestureRecognizers>
             </Label>
             <Label x:Name="messageLabel" />
-        </StackLayout>
+            <Image Source="city.png"  WidthRequest="350" HeightRequest="220"/>
+        </StackLayout> 
     </ContentPage.Content>
 </ContentPage>

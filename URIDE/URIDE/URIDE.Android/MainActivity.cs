@@ -16,7 +16,11 @@ namespace URIDE.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
+            int ScreenWidth = (int)Resources.DisplayMetrics.WidthPixels; // real pixels
+            int ScreenHeight = (int)Resources.DisplayMetrics.HeightPixels; // real pixels
+
             LoadApplication(new App());
         }
+       
     }
 }

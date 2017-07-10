@@ -16,13 +16,23 @@ namespace URIDE.Views
         private UserDataAccess dataAccess;
         public Login ()
 		{
-			InitializeComponent ();
+
+            InitializeComponent ();
+            var myImage = new Image { Aspect = Aspect.AspectFit };
+            myImage.Source = ImageSource.FromResource("5812.png");
+            /* this.BackgroundImage = myImage;
+             StackLayout stackLayout = new StackLayout // instantiate a StackLayout object to layout its children
+             {
+                 BackgroundImage = 
+                 BackgroundColor = Color.Blue
+             };
+             this.Content = stackLayout;*/
             this.dataAccess = new UserDataAccess();
         }
 
         public void Button_Clicked(object sender, EventArgs e)
         {
-            messageLabel.IsVisible = false;
+           /* messageLabel.IsVisible = false;
             if (emailEntry.Text != null || passwordEntry.Text != null)
             {
                User user=  this.dataAccess.GetUserLogin(emailEntry.Text, passwordEntry.Text);
@@ -42,7 +52,7 @@ namespace URIDE.Views
                 messageLabel.IsVisible = true;
                 messageLabel.Text = "Email y contraseña son campos requeridos";
                 messageLabel.TextColor = Xamarin.Forms.Color.Red;
-            }
+            }*/
         }
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)

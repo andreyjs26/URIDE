@@ -144,7 +144,6 @@
       <InProject>false</InProject>
     </ImageAsset>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
   </ItemGroup>
@@ -172,6 +171,20 @@
     <BundleResource Include="Resources\tab_feed.png" />
     <BundleResource Include="Resources\tab_feed%402x.png" />
     <BundleResource Include="Resources\tab_feed%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\city Uride-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Uride LOGO oficial fondo blanco-01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Uride LOGO oficial fondo negro-01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\5812.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
   </ItemGroup>
   <Import Project="..\URIDE\URIDE.projitems" Label="Shared" Condition="Exists('..\URIDE\URIDE.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
