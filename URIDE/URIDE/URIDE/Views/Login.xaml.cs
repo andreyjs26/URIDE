@@ -16,7 +16,17 @@ namespace URIDE.Views
         private UserDataAccess dataAccess;
         public Login ()
 		{
-			InitializeComponent ();
+
+            InitializeComponent ();
+            var myImage = new Image { Aspect = Aspect.AspectFit };
+            myImage.Source = ImageSource.FromResource("5812.png");
+            /* this.BackgroundImage = myImage;
+             StackLayout stackLayout = new StackLayout // instantiate a StackLayout object to layout its children
+             {
+                 BackgroundImage = 
+                 BackgroundColor = Color.Blue
+             };
+             this.Content = stackLayout;*/
             this.dataAccess = new UserDataAccess();
         }
 
@@ -28,7 +38,7 @@ namespace URIDE.Views
                User user=  this.dataAccess.GetUserLogin(emailEntry.Text, passwordEntry.Text);
                 if (user != null)
                 {
-                    App.SetMainPage();
+                    App.SetMainPage(user);
                 }
                 else
                 {
@@ -45,8 +55,10 @@ namespace URIDE.Views
             }
         }
 
-       
-
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            App.SetMainPage(null);
+        }
     }
   
 
