@@ -9,17 +9,19 @@
     </ContentPage.ToolbarItems>-->
     <ContentPage.Content>
          <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="Center">
-            <Image Source="logo.jpg" WidthRequest="250" HeightRequest="120"/>
+            <Image Source="logo.png"/>
+            <Label FontSize="Medium" Text="Cambiando tu forma de viajar" TextColor="#FFEE58" HorizontalOptions="Center"></Label>
+            <Label></Label>
             <Entry x:Name="emailEntry" Placeholder="Email" BackgroundColor="White" />
             <Entry x:Name="passwordEntry" IsPassword="true" Placeholder="Contraseña" BackgroundColor="White"/>
+            <Label x:Name="messageLabel" />
             <Button Text="Acceder" Clicked="Button_Clicked" />
             <Label FontSize="Medium" Text="Registrate ahora" TextColor="#FFEE58" HorizontalOptions="Center">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
                 </Label.GestureRecognizers>
-            </Label>
-            <Label x:Name="messageLabel" />
-            <Image Source="city.png"  WidthRequest="350" HeightRequest="220"/>
+            </Label>            
+            <Image Source="city.png"  />
         </StackLayout> 
     </ContentPage.Content>
 </ContentPage>
